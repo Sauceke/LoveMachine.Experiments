@@ -16,3 +16,8 @@ To use:
 1. Start an H scene and select a penetrative position.
 1. The plugin should take care of the rest and hand over control to your device.
 
+
+<!-- links -->
+[Lovense Calor]: https://www.lovense.com/r/vu65q6
+[Hotdog]: https://sauceke.github.io/hotdog
+[Hotdog Server]: https://github.com/Sauceke/hotdog/releases/latest/download/HotdogServer.exe
