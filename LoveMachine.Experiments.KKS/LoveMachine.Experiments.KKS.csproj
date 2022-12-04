@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyTitle>LoveMachine.Experiments</AssemblyTitle>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <AssemblyFileVersion>$(Version)</AssemblyFileVersion>
+    <Company>Sauceke</Company>
+    <Product>LoveMachine.Experiments</Product>
+    <Copyright>2022</Copyright>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputPath>..\bin\LoveMachine.Experiments.KKS\BepInEx\plugins\KKS_LoveMachine.Experiments\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\LoveMachine.Experiments.KK\*.cs" LinkBase="Included" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AllForOne" Version="1.0.0.27" PrivateAssets="all" />
+    <PackageReference Include="IllusionModdingAPI.KKSAPI" Version="1.34.0" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="IllusionLibs.KoikatsuSunshine.UnityEngine.AnimationModule" Version="2019.4.9" ExcludeAssets="runtime" />
+    <PackageReference Include="LitJson" Version="0.18.0" PrivateAssets="all" />
+    <PackageReference Include="WebSocket4Net" Version="0.15.2" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

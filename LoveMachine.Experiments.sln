@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoveMachine.Experiments.KK", "LoveMachine.Experiments.KK\LoveMachine.Experiments.KK.csproj", "{893E0C9E-BAAC-46D6-8525-5F878369F878}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoveMachine.Experiments.KKS", "LoveMachine.Experiments.KKS\LoveMachine.Experiments.KKS.csproj", "{F427B796-D0A7-4DA9-AB6F-C110883F8737}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{893E0C9E-BAAC-46D6-8525-5F878369F878}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893E0C9E-BAAC-46D6-8525-5F878369F878}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893E0C9E-BAAC-46D6-8525-5F878369F878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F427B796-D0A7-4DA9-AB6F-C110883F8737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F427B796-D0A7-4DA9-AB6F-C110883F8737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F427B796-D0A7-4DA9-AB6F-C110883F8737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F427B796-D0A7-4DA9-AB6F-C110883F8737}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

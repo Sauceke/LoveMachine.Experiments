@@ -31,12 +31,14 @@ jobs:
     - name: Download BLEConsole
       run: |
         Invoke-WebRequest -Uri ${{env.BLECONSOLE_URL}} -OutFile BLEConsole.exe
-        copy BLEConsole.exe bin/BepInEx/plugins/KK_LoveMachine.Experiments
+        copy BLEConsole.exe bin/LoveMachine.Experiments.KK/BepInEx/plugins/KK_LoveMachine.Experiments
+        copy BLEConsole.exe bin/LoveMachine.Experiments.KKS/BepInEx/plugins/KKS_LoveMachine.Experiments
 
     - name: Zip artifacts
       run: |
         mkdir assets
-        Compress-Archive -Path "./bin/BepInEx" -DestinationPath "assets/LoveMachine.Experiments.KK.zip"
+        Compress-Archive -Path "./bin/LoveMachine.Experiments.KK/BepInEx" -DestinationPath "assets/LoveMachine.Experiments.KK.zip"
+        Compress-Archive -Path "./bin/LoveMachine.Experiments.KKS/BepInEx" -DestinationPath "assets/LoveMachine.Experiments.KKS.zip"
 
     - name: Create release
       id: create_release

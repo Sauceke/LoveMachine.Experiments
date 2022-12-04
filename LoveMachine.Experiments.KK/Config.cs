@@ -29,7 +29,7 @@ namespace LoveMachine.Experiments
             HotdogServerAddress = plugin.Config.Bind(
                 section: experimentalTitle,
                 key: "Hotdog server address",
-                defaultValue: "ws://localhost:5365",
+                defaultValue: "ws://127.0.0.1:5365",
                 "The address of the Hotdog server");
         }
     }

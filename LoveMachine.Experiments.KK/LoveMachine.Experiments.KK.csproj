@@ -8,7 +8,7 @@
     <Product>LoveMachine.Experiments</Product>
     <Copyright>2022</Copyright>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <OutputPath>..\bin\BepInEx\plugins\KK_LoveMachine.Experiments\</OutputPath>
+    <OutputPath>..\bin\LoveMachine.Experiments.KK\BepInEx\plugins\KK_LoveMachine.Experiments\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <Target Name="EmbedVersion" BeforeTargets="BeforeBuild">
@@ -28,18 +28,9 @@ namespace LoveMachine.Experiments
     <WriteLinesToFile File="VersionInfo.cs" Lines="$(_VersionTemplate)" WriteOnlyWhenDifferent="true" Overwrite="true" />
   </Target>
   <ItemGroup>
-    <Reference Include="System.XML" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="AllForOne" Version="1.0.0.27" />
-    <PackageReference Include="IllusionLibs.Koikatu.Assembly-CSharp" Version="2019.4.27.4" ExcludeAssets="runtime" />
-    <PackageReference Include="IllusionLibs.Koikatu.UnityEngine" Version="5.6.2.4" ExcludeAssets="runtime" />
-    <PackageReference Include="IllusionModdingAPI.KKAPI" Version="1.34.0">
-      <PrivateAssets></PrivateAssets>
-      <IncludeAssets></IncludeAssets>
-      <ExcludeAssets>runtime</ExcludeAssets>
-    </PackageReference>
-    <PackageReference Include="LitJson" Version="0.18.0" />
-    <PackageReference Include="WebSocket4Net" Version="0.15.2" />
+    <PackageReference Include="AllForOne" Version="1.0.0.27" PrivateAssets="all" />
+    <PackageReference Include="IllusionModdingAPI.KKAPI" Version="1.34.0" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="LitJson" Version="0.18.0" PrivateAssets="all" />
+    <PackageReference Include="WebSocket4Net" Version="0.15.2" PrivateAssets="all" />
   </ItemGroup>
 </Project>
