@@ -1,6 +1,10 @@
 # LoveMachine.Experiments
-
 Spin-off project of LoveMachine for unstable/experimental stuff, using Koikatsu/KKS as testing ground.
+
+[Download (Koikatsu)](https://github.com/Sauceke/LoveMachine.Experiments/releases/latest/download/LoveMachine.Experiments.KK.zip)
+
+[Download (Koikatsu Sunshine)](https://github.com/Sauceke/LoveMachine.Experiments/releases/latest/download/LoveMachine.Experiments.KKS.zip)
+
 
 ## Depth control
 Adds experimental (read: barely usable) support for two depth sensing toys:
@@ -16,6 +20,8 @@ To use:
 1. Start an H scene and select a penetrative position.
 1. The plugin should take care of the rest and hand over control to your device.
 
+## Acknowledgements
+The plugin uses [BLEConsole](https://github.com/sensboston/BLEConsole) to communicate with Lovense Calor devices.
 
 <!-- links -->
 [Lovense Calor]: https://www.lovense.com/r/vu65q6
