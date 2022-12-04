@@ -8,7 +8,7 @@
     <Product>LoveMachine.Experiments</Product>
     <Copyright>2022</Copyright>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <OutputPath>..\bin\LoveMachine.Experiments.KK\BepInEx\plugins\KK_LoveMachine.Experiments\</OutputPath>
+    <OutputPath>..\bin\BepInEx\plugins\KK_LoveMachine.Experiments\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
   <Target Name="EmbedVersion" BeforeTargets="BeforeBuild">

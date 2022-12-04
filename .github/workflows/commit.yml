@@ -1,0 +1,34 @@
+name: .NET
+
+on:
+  push:
+    branches: [ mastur ]
+  pull_request:
+    branches: [ mastur ]
+  workflow_dispatch:
+
+jobs:
+  build-netfx3:
+    runs-on: windows-2019
+    timeout-minutes: 5
+
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v1
+
+    - name: Setup MSBuild path
+      uses: microsoft/setup-msbuild@v1.1
+      with:
+        vs-version: '[16.0,17.0)'
+
+    - name: Build and Publish
+      run: msbuild LoveMachine.Experiments.sln /r /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+
+    - name: Upload binaries
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: .NET Framework artifacts
+        path: bin

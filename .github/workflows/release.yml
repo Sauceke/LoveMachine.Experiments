@@ -1,0 +1,60 @@
+name: Manual release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version'
+        required: true
+
+jobs:
+  build:
+    runs-on: windows-2019
+    timeout-minutes: 5
+
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      BLECONSOLE_URL: https://github.com/sensboston/BLEConsole/releases/download/v1.5.6/BLEConsole.exe
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v1
+
+    - name: Setup MSBuild path
+      uses: microsoft/setup-msbuild@v1.1
+      with:
+        vs-version: '[16.0,17.0)'
+      
+    - name: Build and Publish
+      run: msbuild LoveMachine.Experiments.sln /r /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile /p:Version=${{ github.event.inputs.version }}
+
+    - name: Download BLEConsole
+      run: |
+        Invoke-WebRequest -Uri ${{env.BLECONSOLE_URL}} -OutFile BLEConsole.exe
+        copy BLEConsole.exe bin/BepInEx/plugins/KK_LoveMachine.Experiments
+
+    - name: Zip artifacts
+      run: |
+        mkdir assets
+        Compress-Archive -Path "./bin/BepInEx" -DestinationPath "assets/LoveMachine.Experiments.KK.zip"
+
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ github.event.inputs.version }}
+        release_name: Release v${{ github.event.inputs.version }}
+        body: write the changelog you lazy fuk
+        draft: true
+        prerelease: false
+
+    - name: Upload release assets
+      id: upload-release-assets
+      uses: dwenegar/upload-release-assets@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        release_id: ${{ steps.create_release.outputs.id }}
+        assets_path: assets
